@@ -143,3 +143,7 @@ pyQt:
 
 Highscore:
 - Json Highscore speichern und Vor game Start anzeigbar
+
+
+
+https://www.youtube.com/watch?v=46ICy1VgM5s
