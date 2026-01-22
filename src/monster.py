@@ -11,7 +11,8 @@ class Monster:
         self.damage_taken = 0
 
     def __str__(self):
-        return "The Monster: " + self.name + " has strength: " + str(self.strength) + " and health: " + str(self.health)
+        return ("The Monster: " + self.name + " has strength: "
+                + str(self.strength) + " and health: " + str(self.health))
 
     def take_damage(self, damage):
         self.health -= damage

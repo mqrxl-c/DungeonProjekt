@@ -1,38 +1,22 @@
-import sys
-import time
+from scenes.controller import Controller
+from src.room import Room
 
-import tkinter as tk
-
-from scenes.window import Window
-from room import Room
-from monster import Monster
 from player import Player
+from monster import Monster
 
 if __name__ == "__main__":
 
-    # Create main window
-    root = tk.Tk()
-    root.geometry("400x200")
+    player = Player("Name")
 
-    # Create a frame
-    frame = tk.Frame(root)
-    frame.pack(expand=True, fill="both")
+    controller = Controller()
 
-    # Add some widgets to the frame
-    label = tk.Label(frame, text="Hello, Tkinter!")
-    label.pack(pady=10)
-    button = tk.Button(frame, text="Click Me")
-    button.pack(pady=10)
+    room_list = []
 
+    for i in range(5):
+        room = Room(parent=controller.container, controller=controller, index=i, player=player, monster=Monster("Name"))
+        room_list.append(room)
 
-    # Function to clear all widgets in the frame
-    def clear_frame():
-        for widget in frame.winfo_children():
-            widget.destroy()
+    controller.get_rooms(room_list)
+    controller.show_frame("StartPage")
 
-
-    # Add a button to clear the frame
-    clear_button = tk.Button(root, text="Clear Frame", command=clear_frame)
-    clear_button.pack(pady=20)
-
-    root.mainloop()
+    controller.mainloop()

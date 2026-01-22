@@ -15,9 +15,13 @@ class Player:
             pass
 
     def __str__(self):
-        return self.name + " has strength: " + str(self.strength) + " and health: " + str(self.health)
+        return (self.name + " has strength: " + str(self.strength)
+                + " and health: " + str(self.health))
 
     def regain_health(self, health_regain):
         self.health += health_regain
         if self.health > self.max_health:
             self.health = self.max_health
+
+    def return_strength(self):
+        return self.strength
