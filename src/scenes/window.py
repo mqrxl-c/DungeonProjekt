@@ -1,30 +1,23 @@
-from PyQt6.QtGui import QFontDatabase
-from PyQt6.QtWidgets import QMainWindow, QStackedWidget
+import tkinter as tk
 
-from src.utils import get_project_root
 
-class MainWindow(QMainWindow):
+class Window:
     def __init__(self):
-        super().__init__()
-        self.setFixedSize(640, 480)
+        self.root = tk.Tk()
 
-        self.scenes = QStackedWidget()
-        self.setCentralWidget(self.scenes)
+        self.width = 800
+        self.height = 600
+        self.root.geometry(f"{self.width}x{self.height}")
 
-        self.title_font = ""
+        self.frame = tk.Frame(self.root)
 
-        root = get_project_root()
-        font = QFontDatabase.addApplicationFont(str(root) + "/src/assets/StitchWarrior.ttf")
+        self.root.title("Dungeon Game")
 
-        ## check ob die Schrift richtig geladen wurde
-        if font < 0:
-            print("Error: Font ID not found")
-        else:
-            font_name = QFontDatabase.applicationFontFamilies(font)
-            self.title_font = font_name[0]
+        label = tk.Label(self.frame, text="Welcome to Dungeon Game")
+        label.pack()
 
-    def add_scene(self, scene):
-        self.scenes.addWidget(scene)
+    def go_to_room(self, room):
+        for widget in self.frame.winfo_children():
+            widget.destroy()
 
-    def go_to_scene(self, scene):
-        self.scenes.setCurrentWidget(scene)
+        room.room_loop()
