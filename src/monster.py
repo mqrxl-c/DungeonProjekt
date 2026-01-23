@@ -8,16 +8,17 @@ class Monster:
         self.max_health = self.health
         self.strength = randint(20, 41)
 
-        self.damage_taken = 0
-
     def __str__(self):
         return ("The Monster: " + self.name + " has strength: "
                 + str(self.strength) + " and health: " + str(self.health))
 
     def take_damage(self, damage):
+        '''give the monster damage and returns if it is still alive'''
         self.health -= damage
-        self.damage_taken += damage
+        if self.health <= 0:
+            return False
+        return True
 
     def return_damage_taken(self):
         ## return health to player
-        return int(self.damage_taken / 2)
+        return int(self.max_health / 2)

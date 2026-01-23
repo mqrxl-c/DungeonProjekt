@@ -24,10 +24,8 @@ class Controller(tk.Tk):
             frame = F(parent=self.container, controller=self)
             self.frames[frame.name] = frame
 
-            # put all of the pages in the same location;
-            # the one on the top of the stacking order
-            # will be the one that is visible.
-            frame.grid(row=0, column=0, sticky="nsew")
+            # puts frame on same position, at same size as window
+            frame.place(relwidth=1, relheight=1, relx=0, rely=0, anchor="nw")
 
         self.show_frame("StartPage")
 
@@ -35,7 +33,8 @@ class Controller(tk.Tk):
         '''Takes a list of rooms and adds them to frames'''
         for room in room_list:
             self.frames[room.name] = room
-            room.grid(row=0, column=0, sticky="nsew")
+            # puts room frame on same position, at same size as window
+            room.place(relwidth=1, relheight=1, relx=0, rely=0, anchor="nw")
 
             self.rooms.append(room)
 
@@ -47,6 +46,9 @@ class Controller(tk.Tk):
     def next_room(self, index):
         '''Shows the room at given index'''
         if index < len(self.rooms):
+            ## updates player health for next room
+            self.rooms[index].player_health.set(
+                "Player Health: " + str(self.rooms[index].player.health))
             self.show_frame("Room "+str(index+1))
         else:
             self.show_frame("StartPage")

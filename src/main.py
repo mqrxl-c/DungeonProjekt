@@ -1,11 +1,10 @@
 from scenes.controller import Controller
 from src.room import Room
-
 from player import Player
 from monster import Monster
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     player = Player("Name")
 
     controller = Controller()
