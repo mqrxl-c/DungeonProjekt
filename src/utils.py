@@ -25,7 +25,7 @@ def check_input_number(text, min_value = None, max_value = None):
         except ValueError:
             print("Please enter a valid number.")
 
-name_list = ["Bat", "Bear", "name3"]
+name_list = ["Bat", "Bear", "Dog", "Wolf", "Ant Eater", "Spider"]
 
 def randomize_name():
     int = random.randint(0, len(name_list) - 1)

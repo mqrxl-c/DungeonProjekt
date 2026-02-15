@@ -10,7 +10,8 @@ class Room:
         self.player = player
 
     def run_room(self):
-        while self.monster.health >= 0:
+        run = True
+        while run:
 
             print_line()
             print(self.monster.health_bar())
@@ -24,14 +25,28 @@ class Room:
             print(r"[F]lee")
 
             selection = input()
-            if selection.lower() == "a":
-                self.player_attack()
-            elif selection.lower() == "f":
-                self.player_flee()
-                pass
+            invalid = True
+            while invalid:
+                if selection.lower() in ["a", "f", "flee", "attack"]:
+                    invalid = False
+                    if selection.lower() == "a":
+                        self.player_attack()
+                    elif selection.lower() == "f":
+                        self.player_flee()
+                        run = False
+                else:
+                    invalid = True
+                    print("Please enter a valid option")
+                    selection = input()
 
             if self.monster.health >= 0 and not selection.lower() == "f":
                 self.monster_attack()
+
+            if self.monster.health <= 0:
+                run = False
+                self.player.damage_done += self.monster.max_health
+                self.player.regain_health(round(self.monster.max_health / 2))
+                print(self.player.name + " regenerated " + str(round(self.monster.max_health / 2)) + " health!")
 
         input("Press Enter to continue to the next room...")
 

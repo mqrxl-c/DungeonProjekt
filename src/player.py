@@ -8,6 +8,8 @@ class Player:
         self.strength = randint(40, 81)
         self.max_health = self.health
 
+        self.damage_done = 0
+
     def take_damage(self, damage):
         self.health -= damage
         if self.health <= 0:

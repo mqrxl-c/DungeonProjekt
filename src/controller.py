@@ -2,6 +2,8 @@ from monster import Monster
 from utils import print_line, check_input_number, randomize_name
 from room import Room
 
+from rich import print
+
 class Controller:
     def __init__(self, player):
         self.room_list = []
@@ -23,7 +25,6 @@ class Controller:
             name = input()
 
             if name == "":
-                ## randomize
                 name = randomize_name()
 
             monster = Monster(name)
@@ -34,6 +35,8 @@ class Controller:
 
     def run_game(self):
         for room in self.room_list:
-
             room.run_room()
-        print("Won")
+
+        print_line()
+        print("You Won!")
+        print("You finished " + str(len(self.room_list)) + " rooms and made " + str(self.player.damage_done) + " damage!")
