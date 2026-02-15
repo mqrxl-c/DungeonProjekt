@@ -1,21 +1,16 @@
-from scenes.controller import Controller
-from src.room import Room
+from controller import Controller
 from player import Player
-from monster import Monster
-
+from utils import print_line
 
 if __name__ == "__main__":
-    player = Player("Name")
 
-    controller = Controller()
+    print("Game Starting..")
 
-    room_list = []
+    name = input("Enter your name: ")
+    player = Player(name)
+    controller = Controller(player)
 
-    for i in range(5):
-        room = Room(parent=controller.container, controller=controller, index=i, player=player, monster=Monster("Name"))
-        room_list.append(room)
+    print_line()
 
-    controller.get_rooms(room_list)
-    controller.show_frame("StartPage")
-
-    controller.mainloop()
+    controller.init_game()
+    controller.run_game()

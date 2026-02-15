@@ -25,3 +25,10 @@ class Player:
 
     def return_strength(self):
         return self.strength
+
+    def health_bar(self):
+        full = round(self.max_health / 10)
+        amount = round(self.health / 10)
+
+        string = (str(self.name) + " HP: "+ ":red_heart-emoji: " * amount + ":black_heart-emoji: " * (full - amount) + str(self.health) + "/" + str(self.max_health))
+        return string
