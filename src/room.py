@@ -41,14 +41,14 @@ class Room:
 
             if self.monster.health >= 0 and not selection.lower() == "f":
                 self.monster_attack()
+                if self.player.health <= 0:
+                    break
 
             if self.monster.health <= 0:
                 run = False
                 self.player.damage_done += self.monster.max_health
                 self.player.regain_health(round(self.monster.max_health / 2))
                 print(self.player.name + " regenerated " + str(round(self.monster.max_health / 2)) + " health!")
-
-        input("Press Enter to continue to the next room...")
 
     def player_attack(self):
         print_line()

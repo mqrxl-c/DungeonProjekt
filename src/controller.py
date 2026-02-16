@@ -35,8 +35,18 @@ class Controller:
 
     def run_game(self):
         for room in self.room_list:
-            room.run_room()
+            if self.player.health > 0:
+                input("Press Enter to continue to the next room...")
+                room.run_room()
+            else:
+                break
 
-        print_line()
-        print("You Won!")
-        print("You finished " + str(len(self.room_list)) + " rooms and made " + str(self.player.damage_done) + " damage!")
+        if self.player.health > 0:
+            print_line()
+            print("You Won!")
+            print("You finished " + str(len(self.room_list)) + " rooms and made " + str(self.player.damage_done) + " damage!")
+        else:
+            ## lose
+            print_line()
+            print("You Lost!")
+            print("You finished " + str(len(self.room_list)) + " rooms and made " + str(self.player.damage_done) + " damage!")

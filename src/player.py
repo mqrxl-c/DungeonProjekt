@@ -4,7 +4,7 @@ from random import randint
 class Player:
     def __init__(self, name : str="Name"):
         self.name = name
-        self.health = 100
+        self.health = 10
         self.strength = randint(40, 81)
         self.max_health = self.health
 
@@ -17,6 +17,8 @@ class Player:
             pass
 
     def __str__(self):
+        if self.health <= 0:
+            return "The Player, " + self.name + ", is dead."
         return (self.name + " has strength: " + str(self.strength)
                 + " and health: " + str(self.health))
 
