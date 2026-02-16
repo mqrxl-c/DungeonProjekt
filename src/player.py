@@ -4,7 +4,7 @@ from random import randint
 class Player:
     def __init__(self, name : str="Name"):
         self.name = name
-        self.health = 10
+        self.health = 100
         self.strength = randint(40, 81)
         self.max_health = self.health
 
@@ -12,9 +12,6 @@ class Player:
 
     def take_damage(self, damage):
         self.health -= damage
-        if self.health <= 0:
-            ## die
-            pass
 
     def __str__(self):
         if self.health <= 0:
@@ -27,12 +24,12 @@ class Player:
         if self.health > self.max_health:
             self.health = self.max_health
 
-    def return_strength(self):
-        return self.strength
-
     def health_bar(self):
+        '''returns the string for a visual health bar'''
         full = round(self.max_health / 10)
         amount = round(self.health / 10)
 
-        string = (str(self.name) + " HP: "+ ":red_heart-emoji: " * amount + ":black_heart-emoji: " * (full - amount) + str(self.health) + "/" + str(self.max_health))
+        string = (str(self.name) + " HP: "+ ":red_heart-emoji: " * amount
+                  + ":black_heart-emoji: " * (full - amount) + str(self.health)
+                  + "/" + str(self.max_health))
         return string

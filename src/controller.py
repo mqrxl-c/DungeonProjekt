@@ -1,8 +1,9 @@
+from rich import print
+
 from monster import Monster
 from utils import print_line, check_input_number, randomize_name
 from room import Room
 
-from rich import print
 
 class Controller:
     def __init__(self, player):
@@ -10,17 +11,20 @@ class Controller:
         self.player = player
 
     def init_game(self):
+        '''initializes the rooms from user input'''
+
         print("Welcome to Dungeon Run")
         print_line()
 
-        room_amount = check_input_number("How many rooms do you want to play? ")
+        room_amount = check_input_number("How many rooms do you want to play?")
 
         input("Press enter to init game with " + str(room_amount) + " rooms.")
 
         for i in range(room_amount):
             print_line()
             print("Room " + str(i + 1))
-            print("Enter a name for the monster. If left empty the game will select a random name.")
+            print("Enter a name for the monster. "
+                  "If left empty the game will select a random name.")
 
             name = input()
 
@@ -28,12 +32,12 @@ class Controller:
                 name = randomize_name()
 
             monster = Monster(name)
-
             self.room_list.append(Room(i, monster, self.player))
 
         print("Setup for " + str(room_amount) + " rooms finished.")
 
     def run_game(self):
+        '''runs all rooms and handles win and Lose'''
         for room in self.room_list:
             if self.player.health > 0:
                 input("Press Enter to continue to the next room...")
@@ -42,11 +46,14 @@ class Controller:
                 break
 
         if self.player.health > 0:
+            ## print Win message and stats
             print_line()
             print("You Won!")
-            print("You finished " + str(len(self.room_list)) + " rooms and made " + str(self.player.damage_done) + " damage!")
+            print("You finished " + str(len(self.room_list)) +
+                " rooms and made " + str(self.player.damage_done) + " damage!")
         else:
-            ## lose
+            ## if player is dead print Lose message and stats
             print_line()
             print("You Lost!")
-            print("You finished " + str(len(self.room_list)) + " rooms and made " + str(self.player.damage_done) + " damage!")
+            print("You finished " + str(len(self.room_list)) +
+                " rooms and made " + str(self.player.damage_done) + " damage!")

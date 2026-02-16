@@ -1,18 +1,16 @@
-from pathlib import Path
 import random
-from rich.console import Console
 
-console = Console()
+## line for visuals
+BREAKLINE = "+" + "-"*64 + "+"
 
-def get_project_root() -> Path:
-    return Path(__file__).parent.parent
-
-breakline = "+" + "-"*64 + "+"
 
 def print_line():
-    print(breakline)
+    '''prints the visual breakpoint'''
+    print(BREAKLINE)
+
 
 def check_input_number(text, min_value = None, max_value = None):
+    '''checks an input for a number until it recieves a valid number'''
     while True:
         try:
             num = int(input(text))
@@ -27,9 +25,12 @@ def check_input_number(text, min_value = None, max_value = None):
 
 name_list = ["Bat", "Bear", "Dog", "Wolf", "Ant Eater", "Spider"]
 
+
 def randomize_name():
+    '''returns a randomized name from name_list'''
     int = random.randint(0, len(name_list) - 1)
     return name_list[int]
+
 
 ascii_image_list = [
     r""""                                
