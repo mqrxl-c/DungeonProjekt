@@ -10,7 +10,4 @@ if __name__ == "__main__":
     player = Player(name)
     controller = Controller(player)
 
-    print_line()
-
-    controller.init_game()
-    controller.run_game()
+    controller.run_menu()

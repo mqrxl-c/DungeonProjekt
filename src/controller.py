@@ -10,10 +10,45 @@ class Controller:
         self.room_list = []
         self.player = player
 
+    def run_menu(self):
+        print_line()
+        print("Welcome " + self.player.name + " to Dungeon Run!")
+        print_line()
+
+        print("[S]tart")
+        print("[H]ow to play")
+        ##print("[O]ptions")
+        print("[Q]uit")
+
+        ## Check if Player Input is valid
+        selection = input()
+        invalid = True
+        while invalid:
+            if selection.lower() in ["s", "h", "o", "q", "quit", "option",
+                                     "start", "how to play"]:
+                invalid = False
+
+                ## handle player input
+                if selection.lower() == "s":
+                    self.init_game()
+                elif selection.lower() == "h":
+                    self.print_description()
+                elif selection.lower() == "q":
+                    break
+            else:
+                invalid = True
+                print("Please enter a valid option")
+                selection = input()
+
+    def print_description(self):
+        print_line()
+        print("Game Info / Tut")
+        input("Press enter to back")
+        self.run_menu()
+
     def init_game(self):
         '''initializes the rooms from user input'''
 
-        print("Welcome to Dungeon Run")
         print_line()
 
         room_amount = check_input_number("How many rooms do you want to play?")
@@ -35,6 +70,7 @@ class Controller:
             self.room_list.append(Room(i, monster, self.player))
 
         print("Setup for " + str(room_amount) + " rooms finished.")
+        self.run_game()
 
     def run_game(self):
         '''runs all rooms and handles win and Lose'''
