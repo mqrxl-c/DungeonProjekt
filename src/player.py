@@ -10,8 +10,8 @@ class Player:
 
         self.damage_done = 0
 
-    def take_damage(self, damage):
-        self.health -= damage
+    def take_damage(self, damage : int):
+        self.health -= round(damage)
 
     def __str__(self):
         if self.health <= 0:
@@ -19,8 +19,8 @@ class Player:
         return (self.name + " has strength: " + str(self.strength)
                 + " and health: " + str(self.health))
 
-    def regain_health(self, health_regain):
-        self.health += health_regain
+    def regain_health(self, health_regain : int):
+        self.health += round(health_regain)
         if self.health > self.max_health:
             self.health = self.max_health
 
