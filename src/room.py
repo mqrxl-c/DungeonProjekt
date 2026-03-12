@@ -20,7 +20,7 @@ class Room:
                 invalid = False
 
                 ## handle player input
-                if selection.lower() == "a":
+                if selection.lower() in ["a", "attack"]:
                     self.player_attack()
                 return selection
             else:

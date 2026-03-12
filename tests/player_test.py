@@ -4,7 +4,7 @@ import os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
-from src.player import Player
+from src.Player import Player
 import unittest
 
 
@@ -50,6 +50,8 @@ class TestPlayer(unittest.TestCase):
         self.player.health = 100
         expected = "Name HP: "+ ":red_heart-emoji: " * 10 + ":black_heart-emoji: " * (10 - 10) + "100/100"
         self.assertEqual(self.player.health_bar(), expected)
+
+        assert type(self.player.health_bar()) is str
     
     def test_player_string(self):
         ## checkt ob __str__ richig ausgibt
@@ -57,6 +59,7 @@ class TestPlayer(unittest.TestCase):
         self.player.health = 100
         self.player.strength = 40
         self.assertEqual(self.player.__str__(), expected)
+        assert type(self.player.__str__()) is str
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ BREAKLINE = "+" + "-"*64 + "+"
 
 
 def print_line():
-    '''prints the visual breakpoint'''
+    '''prints an horizontal line'''
     print(BREAKLINE)
 
 
@@ -14,7 +14,7 @@ def get_json_data():
     print("Test")
 
 
-def check_input_number(text, min_value = None, max_value = None):
+def check_input_number(text = "", min_value = None, max_value = None):
     '''checks an input for a number until it recieves a valid number'''
     while True:
         try:

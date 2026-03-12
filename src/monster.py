@@ -1,6 +1,6 @@
 from random import randint
 
-from utils import ascii_image_list
+from src.utils import ascii_image_list
 
 
 class Monster:
@@ -20,7 +20,7 @@ class Monster:
                 + " health")
 
     def take_damage(self, damage):
-        self.health -= damage
+        self.health -= round(damage)
 
     def return_damage_taken(self):
         ## return health to player

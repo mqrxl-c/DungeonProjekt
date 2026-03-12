@@ -1,8 +1,8 @@
 from rich import print
 
-from monster import Monster
-from utils import print_line, check_input_number, randomize_name
-from room import Room
+from src.monster import Monster
+from src.utils import print_line, check_input_number, randomize_name
+from src.room import Room
 
 
 class Controller:
@@ -17,14 +17,13 @@ class Controller:
 
         print("[S]tart")
         print("[H]ow to play")
-        ##print("[O]ptions")
         print("[Q]uit")
 
         ## Check if Player Input is valid
         selection = input()
         invalid = True
         while invalid:
-            if selection.lower() in ["s", "h", "o", "q", "quit", "option",
+            if selection.lower() in ["s", "h", "q", "quit",
                                      "start", "how to play"]:
                 invalid = False
 
