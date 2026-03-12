@@ -1,7 +1,8 @@
 # DungeonProjekt
 ***
-Projekt von Programmieren 2026 DHBW
-Kurze Beschreibung etc.
+Programmieren Projekt 2026 DHBW  
+Das Ziel des Spielst ist es das Ende des Dungeons zu Erreichen, dafür muss der Spieler durch mehrere Räume
+und in diesen gegen gefährliche Monster kämpfen.
 
 ___
 ### Installation und Ausführung
@@ -20,12 +21,12 @@ Komplizierter:
 
 ___
 ### Tests Ausführen
-Um die Unittests der Klassen "Monster", "Player" oder die Tests von "Utils" auszuführen:
-1. im Terminal in den root Ordner navigieren
+Um die Unittests auszuführen muss man zuerst Schritt 1 (Dependencies installieren)
+aus der Anleitung zur Spielausführung befolgen.
+1. im Terminal in den root Ordner navigieren (oder direkt in den test ordner)
 2. "py tests/dateiname.py" ausführen
 
 ___
 ### Strukturübersicht
-
 
 
