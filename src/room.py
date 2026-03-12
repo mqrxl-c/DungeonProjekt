@@ -4,51 +4,79 @@ from time import sleep
 
 
 class Room:
-    def __init__(self, index, monster, player):
-        self.name = "Room " + str(index + 1)
+    def __init__(self, name, monster, player):
+        self.name = name
 
         ## Class References
         self.monster = monster
         self.player = player
+    
+    def handle_input(self):
+        '''Handles Player input in fight'''
+        selection = input()
+        invalid = True
+        while invalid:
+            if selection.lower() in ["a", "attack"]:
+                invalid = False
+
+                ## handle player input
+                if selection.lower() == "a":
+                    self.player_attack()
+                return selection
+            else:
+                invalid = True
+                print("Please enter a valid option")
+                selection = input()
+    
+    def print_room(self):
+        '''Prints Room Info'''
+        print_line()
+        print(self.name)
+        print(self.monster.health_bar())
+        print(self.player.health_bar())
+
+        print(self.monster.image)
+
+        print_line()
+
+    def start_room(self):
+        
+        self.print_room()
+
+        ## Print Possible Actions
+        print(r"[F]ight")
+        print(r"[R]un")
+
+        selection = input()
+        invalid = True
+        while invalid:
+            if selection.lower() in ["r", "f", "fight", "run"]:
+                invalid = False
+
+                    ## handle player input
+                if selection.lower() == "f":
+                    self.monster_attack()
+                    self.run_room()
+                elif selection.lower() == "r":
+                    self.player_flee()
+            else:
+                invalid = True
+                print("Please enter a valid option")
+                selection = input()
 
     def run_room(self):
         run = True
         while run:
-
-            ## Print Room Info
-            print_line()
-            print(self.name)
-            print(self.monster.health_bar())
-            print(self.player.health_bar())
-
-            print(self.monster.image)
-
-            print_line()
+            
+            self.print_room()
 
             ## Print Possible Actions
             print(r"[A]ttack")
-            print(r"[F]lee")
 
-            ## Check if Player Input is valid
-            selection = input()
-            invalid = True
-            while invalid:
-                if selection.lower() in ["a", "f", "flee", "attack"]:
-                    invalid = False
-
-                    ## handle player input
-                    if selection.lower() == "a":
-                        self.player_attack()
-                    elif selection.lower() == "f":
-                        self.player_flee()
-                        run = False
-                else:
-                    invalid = True
-                    print("Please enter a valid option")
-                    selection = input()
+            self.handle_input()
 
             ## check if the monster is alive and do its action
-            if self.monster.health > 0 and not selection.lower() == "f":
+            if self.monster.health > 0:
                 self.monster_attack()
 
             elif self.monster.health <= 0:

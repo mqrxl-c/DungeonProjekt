@@ -5,7 +5,7 @@ class Player:
     def __init__(self, name : str="Name"):
         self.name = name
         self.health = 100
-        self.strength = randint(40, 81)
+        self.strength = randint(40, 80)
         self.max_health = self.health
 
         self.damage_done = 0

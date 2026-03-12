@@ -6,9 +6,9 @@ from utils import ascii_image_list
 class Monster:
     def __init__(self, name):
         self.name = name
-        self.health = randint(40, 81)
+        self.health = randint(40, 80)
         self.max_health = self.health
-        self.strength = randint(20, 41)
+        self.strength = randint(20, 40)
 
         int = randint(0, len(ascii_image_list) - 1)
         self.image = ascii_image_list[int]
