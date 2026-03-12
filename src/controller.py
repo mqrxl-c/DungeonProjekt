@@ -1,8 +1,8 @@
 from rich import print
 
-from src.monster import Monster
-from src.utils import print_line, check_input_number, randomize_name
-from src.room import Room
+from monster import Monster
+from utils import print_line, check_input_number, randomize_name
+from room import Room
 
 
 class Controller:

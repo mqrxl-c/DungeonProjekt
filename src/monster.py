@@ -1,6 +1,6 @@
 from random import randint
 
-from src.utils import ascii_image_list
+from utils import ascii_image_list
 
 
 class Monster:

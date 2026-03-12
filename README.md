@@ -1,6 +1,6 @@
 # DungeonProjekt
 ***
-Projekt von Programmieren 2026
+Projekt von Programmieren 2026 DHBW
 Kurze Beschreibung etc.
 
 ___
