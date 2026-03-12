@@ -1,4 +1,3 @@
-
 """
 Wegen fehler bei den Imports für die Test Dateien.
 Code nimmt den Absoluten Pfad des Projektes und hängt es vorne an die Imports an.
@@ -13,7 +12,6 @@ sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 from src.controller import Controller
 from src.Player import Player
-from src.utils import print_line
 
 if __name__ == "__main__":
 

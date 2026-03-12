@@ -1,6 +1,7 @@
-from utils import print_line
 from rich import print
 from time import sleep
+
+from utils import print_line
 
 
 class Room:

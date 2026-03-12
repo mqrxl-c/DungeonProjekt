@@ -1,11 +1,11 @@
-
 import sys
 import os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
-from src.Player import Player
 import unittest
+
+from src.Player import Player
 
 
 class TestPlayer(unittest.TestCase):
@@ -48,7 +48,7 @@ class TestPlayer(unittest.TestCase):
 
     def test_health_bar(self):
         self.player.health = 100
-        expected = "Name HP: "+ ":red_heart-emoji: " * 10 + ":black_heart-emoji: " * (10 - 10) + "100/100"
+        expected = "Name HP: "+ ":red_heart-emoji: " * 10 + "100/100"
         self.assertEqual(self.player.health_bar(), expected)
 
         assert type(self.player.health_bar()) is str
