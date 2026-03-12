@@ -1,5 +1,5 @@
 from controller import Controller
-from player import Player
+from Player import Player
 from utils import print_line
 
 if __name__ == "__main__":
