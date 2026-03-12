@@ -9,11 +9,6 @@ def print_line():
     print(BREAKLINE)
 
 
-def get_json_data():
-    #https://www.geeksforgeeks.org/python/reading-and-writing-json-to-a-file-in-python/
-    print("Test")
-
-
 def check_input_number(text = "", min_value = None, max_value = None):
     '''checks an input for a number until it recieves a valid number'''
     while True:
@@ -28,8 +23,8 @@ def check_input_number(text = "", min_value = None, max_value = None):
         except ValueError:
             print("Please enter a valid number.")
 
-name_list = ["Bat", "Bear", "Dog", "Wolf", "Ant Eater", "Spider"]
 
+name_list = ["Bat", "Bear", "Dog", "Wolf", "Ant Eater", "Spider"]
 
 def randomize_name():
     '''returns a randomized name from name_list'''

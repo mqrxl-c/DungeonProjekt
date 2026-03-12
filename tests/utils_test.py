@@ -19,5 +19,6 @@ class UtilsTest(unittest.TestCase):
 
         assert check_input_number(text="input3 ", max_value = 1) <= 1
 
+
 if __name__ == "__main__":
     unittest.main()
