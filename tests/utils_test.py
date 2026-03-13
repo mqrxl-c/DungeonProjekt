@@ -1,3 +1,5 @@
+## Wegen Probleme mit Import wird der Dateipfad zu src vor die Imports
+# angehängt. In Doku genaueres
 import sys
 import os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))

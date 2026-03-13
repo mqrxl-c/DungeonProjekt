@@ -89,14 +89,12 @@ class Controller:
                 break
 
         if self.player.health > 0:
-            ## print Win message and stats
             print_line()
             print("You Won!")
             print("You finished " + str(len(self.room_list)) +
                 " rooms and made " + str(self.player.damage_done) + " damage!")    
 
         else:
-            ## if player is dead print Lose message and stats
             print_line()
             print("You Lost!")
             print("You finished " + str(len(self.room_list)) +
