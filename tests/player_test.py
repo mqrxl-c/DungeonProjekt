@@ -46,6 +46,9 @@ class TestPlayer(unittest.TestCase):
         self.player.take_damage(9.1)
         assert self.player.health == 61
 
+        self.player.take_damage(-10)
+        assert self.player.health == 71
+
     def test_health_bar(self):
         self.player.health = 100
         expected = "Name HP: "+ ":red_heart-emoji: " * 10 + "100/100"

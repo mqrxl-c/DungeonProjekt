@@ -25,6 +25,9 @@ class TestMonster(unittest.TestCase):
         self.monster.take_damage(9.1)
         assert self.monster.health == 61
 
+        self.monster.take_damage(-10)
+        assert self.monster.health == 71
+
     def test_health_bar(self):
         self.monster.health = 100
         self.monster.max_health = 100
