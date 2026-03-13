@@ -147,9 +147,3 @@ Highscore:
 
 
 https://www.youtube.com/watch?v=46ICy1VgM5s
-
-ToDo:
--[ ] Test Schreiben
-- [ ] Doku
-- [ ] Read me
-- [ ] evtl. Highscore oder extra Gameplay zeug
