@@ -32,7 +32,25 @@ aus der Anleitung zur Spielausführung befolgen.
 ___
 ### Strukturübersicht
 
+Alle Dateien für das Spiel befinden sich im src Ordner. Die Test dateien liegen im "tests" Ordner.
+Die Datei "Setup.py" liegt als einzige Python datei im Root ordner, daher diese Sich um die Dependencies kümmert.
 
+Dokumentationen wie die Aufgabenstellung liegen im "docs" Ordner.
+In "dist" liegt die von pyInstaller erstellte exe Datei.
+
+**Wichtige Klassen**
+1. **Controller**  
+    Der Controller kümmert sich um den Ablauf des Programmes. Und Kontrolliert wann die Anderen Klassen verwendet werden.
+2. **Room**  
+   Room ist die Klasse für einen Einzelnen Raum, er übernimmt den Ablauf von diesem Raum und Kontrolliert das Monster in
+   diesem
+3. **Player**  
+   Der Player hält die Infos des Spielers und Kontrolliert diesen
+4. **Monster**  
+   Die Klasse Monster hält die Infos des Monster und Kontrolliert dieses
+
+Außerdem gibt eine eine Datei "Utils" mit den Wichtigsten funktionen welche in mehreren
+Klassen verwendet werden.
 
 
 ---
