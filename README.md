@@ -1,8 +1,11 @@
 # DungeonProjekt
 ***
 Programmieren Projekt 2026 DHBW  
-Das Ziel des Spielst ist es das Ende des Dungeons zu Erreichen, dafür muss der Spieler durch mehrere Räume
-und in diesen gegen gefährliche Monster kämpfen.
+ 
+Das Ziel des Spiels ist es, das Ende des Dungeons zu erreichen. 
+Dabei muss der Spieler durch mehrere Räume und Überleben. 
+In jedem Raum gibt es ein Monster, gegen das der Spieler kämpfen oder wegrennen kann. 
+Vor dem Spielstart entscheidet der Spieler, wie viele Räume er spielen will. 
 
 ___
 ### Installation und Ausführung
@@ -29,4 +32,14 @@ aus der Anleitung zur Spielausführung befolgen.
 ___
 ### Strukturübersicht
 
+
+
+
+---
+### Einschränkungen
+Wenn das Programm über die .exe auf einem älteren Gerät ausgeführt wird,
+kann es sein das die visuelle Lebensanzeige der Monster und des Spielers nicht angezeigt wird.
+Dann werden "?" als Ersatz für die Herzen verwendet. Die Zahlenanzeige Funktioniert immer.
+
+---
 
